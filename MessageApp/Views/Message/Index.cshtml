@@ -1,0 +1,32 @@
+﻿@model IEnumerable<MessageWCF.MessageModel>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-offset-1 col-lg-10">
+            <h2 class="text-center">Message Board</h2><br />
+
+            <div class="list-group">
+
+                @foreach (var item in Model)
+                {
+                    <a href="#" class="list-group-item">
+                        <div class="list-group-item-heading">
+                            <h4>
+                                @Html.DisplayFor(modelItem => item.Title)
+                        </h4>
+                            <small>
+                               Date of message: @Html.DisplayFor(modelItem => item.DateOfMessage)
+                        </small>
+                    </div>
+                        <p class="list-group-item-text">
+                            @Html.DisplayFor(modelItem => item.Body)
+                        </p>
+                </a>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
